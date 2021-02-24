@@ -1,0 +1,23 @@
+{% load static %}
+<ul class="flex items-center text-sm font-medium h-full">
+    {% if user.is_authenticated %}
+        <li class="nav_link"><a href="{% url 'users:logout' %}">Log out</a></li>
+    {% else %}
+        <li class="nav_link"><a href="{% url 'users:login' %}">Log in</a></li>
+        <li class="nav_link"><a href="{% url 'users:signup' %}">Sign up</a></li>
+    {% endif %}
+    
+</ul>
+    <!--
+    <form method="get" action="{% url "rooms:search" %}">
+        <input name="city" placeholder="Search by City" />
+    </from>
+    -->
+
+    <!--- when don't use styles.css
+    {% if user.is_authenticated %}
+        <li class="ml-8"><a href="{% url 'users:logout' %}">Log out</a></li>
+    {% else %}
+        <li class="ml-8 border-b-2 border-white hover:border-gray-600 flex items-center"><a class="py-10 px-5" href="{% url 'users:login' %}">Log in</a></li>
+        <li class="ml-8 border-b-2 border-white hover:border-gray-600 flex items-center"><a class="py-10 px-5" href="{% url 'users:signup' %}">Sign up</a></li>
+    {% endif %}-->
